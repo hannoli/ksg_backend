@@ -13,13 +13,15 @@ import java.time.LocalDateTime;
 @ToString
 public class AlterDTO {
 
-private String Room;
-private LocalDateTime localDateTime;
+    private String Room;
+    private LocalDateTime localDateTime= LocalDateTime.now();
 
-    public static AlterDTO toAlterDTO(AlterEntity alterEntity){
+    public static AlterDTO toAlterDTO(AlterEntity alterEntity) {
         AlterDTO alterDTO = new AlterDTO();
-        alterDTO.setRoom(alterEntity.getMemberRoom());
-        alterDTO.setLocalDateTime(alterEntity.getMemberTime());
+        alterDTO.setRoom(alterEntity.getAlterRoom());
+        alterDTO.setLocalDateTime(alterEntity.getAlterTime());
         return alterDTO;
     }
+
+
 }
